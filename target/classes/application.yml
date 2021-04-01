@@ -5,10 +5,12 @@ spring:
     url: jdbc:mysql://115.159.149.240:3306/calendar?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.jdbc.Driver
 
-mybatis-plus:
-  mapper-locations: classpath*:/mapper/**/*.xml
-  global-config:
-    db-config:
-      id-type: auto
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.echo.calendar.entity
+  mapper-locations: classpath:mapper/*Mapper.xml
+
 server:
   port: 8080
+
