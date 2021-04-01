@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: root
+    password: 57842968
+    url: jdbc:mysql://115.159.149.240:3306/calendar?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 8080
