@@ -1,0 +1,17 @@
+package com.echo.calendar.entity.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class MemoUpdateDTO {
+
+    String mid;
+    String openid;
+    String title;
+    String text;
+    String time;
+}

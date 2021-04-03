@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d365a286-9d64-44af-8d97-cd162ae4dc7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/pojo/MemoEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/CalendarApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/CalendarApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/MemoEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/pojo/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/MemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/MemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/dao/MemoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/dao/MemoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/service/impl/MemoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/service/impl/MemoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +57,9 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/WeChatOrderSystem-master" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunManager">
     <configuration name="CalendarApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="calendar" />
@@ -91,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617106866183</updated>
       <workItem from="1617106869230" duration="2444000" />
-      <workItem from="1617271601134" duration="4463000" />
+      <workItem from="1617271601134" duration="9001000" />
     </task>
     <servers />
   </component>
