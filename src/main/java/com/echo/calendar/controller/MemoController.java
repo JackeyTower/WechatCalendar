@@ -1,9 +1,11 @@
 package com.echo.calendar.controller;
 
 import com.echo.calendar.entity.bean.CommonResult;
+import com.echo.calendar.entity.bean.PageResult;
 import com.echo.calendar.entity.dto.MemoAddDTO;
 import com.echo.calendar.entity.dto.MemoUpdateDTO;
 import com.echo.calendar.entity.pojo.MemoEntity;
+import com.echo.calendar.entity.vo.MemoQueryVO;
 import com.echo.calendar.service.impl.MemoServiceImpl;
 import com.echo.calendar.util.IdWorker;
 import org.springframework.beans.BeanUtils;
@@ -42,4 +44,15 @@ public class MemoController {
         memoService.updateById(memoUpdateDTO);
         return new CommonResult<>(200, "OK", "更新成功");
     }
+
+    @GetMapping("/{openid}/{cp}/{ps}")
+    public CommonResult<PageResult<MemoQueryVO>> findAllMemo(@PathVariable("openid") String openid,
+                                                             @PathVariable("cp") Integer cp,
+                                                             @PathVariable("ps") Integer ps){
+
+        PageResult<MemoQueryVO> allMemo = memoService.findAllMemo(openid, cp, ps);
+        return new CommonResult<>(200,"OK",allMemo);
+    }
+
+
 }
