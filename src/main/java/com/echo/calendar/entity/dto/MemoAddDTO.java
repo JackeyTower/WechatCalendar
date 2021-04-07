@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MemoAddDTO {
 
-
-    String openid;
     String title;
     String text;
     String time;

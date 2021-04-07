@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.echo.calendar.dao.UserDAO;
 import com.echo.calendar.entity.pojo.UserEntity;
-import com.echo.calendar.entity.vo.UserLoginVO;
+import com.echo.calendar.util.JwtUtil;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
@@ -13,8 +13,13 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserDAO, UserEntity> {
 
+    private JwtUtil jwtUtil;
 
-    public UserLoginVO login(String code) throws JSONException {
+    public UserServiceImpl(JwtUtil jwtUtil) {
+        this.jwtUtil = jwtUtil;
+    }
+
+    public String login(String code) throws JSONException {
         //接收从客户端获取的code
         //向微信后台发起请求获取openid的url
         String WX_URL = "https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code";
@@ -33,8 +38,6 @@ public class UserServiceImpl extends ServiceImpl<UserDAO, UserEntity> {
         jsonObject=(JSONObject) JSON.parse(returnValue);
         String openid=(String)jsonObject.get("openid");
         String session_key=(String)jsonObject.get("session_key");
-
-        UserLoginVO userLoginVO = new UserLoginVO(openid, session_key);
-        return userLoginVO;
+        return jwtUtil.createJWT(openid, session_key);
     }
 }

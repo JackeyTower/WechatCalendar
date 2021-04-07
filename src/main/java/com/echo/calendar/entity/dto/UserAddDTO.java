@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserAddDTO {
-    @ApiModelProperty("小程序用户id")
-    String oepnid;
     @ApiModelProperty("用户名")
     String username;
 }

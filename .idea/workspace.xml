@@ -3,14 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d365a286-9d64-44af-8d97-cd162ae4dc7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/MemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/MemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/dao/MemoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/dao/MemoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/dto/MemoAddDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/dto/MemoAddDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/dto/MemoUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/dto/MemoUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/dto/UserAddDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/dto/UserAddDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/entity/vo/UserLoginVO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/service/impl/MemoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/service/impl/MemoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/echo/calendar/controller/MemoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/echo/calendar/controller/MemoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/echo/calendar/dao/MemoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/echo/calendar/dao/MemoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/echo/calendar/service/impl/MemoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/echo/calendar/service/impl/MemoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/echo/calendar/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/echo/calendar/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,9 @@
       <updated>1617106866183</updated>
       <workItem from="1617106869230" duration="2444000" />
       <workItem from="1617271601134" duration="9001000" />
-      <workItem from="1617447058204" duration="810000" />
+      <workItem from="1617447058204" duration="1639000" />
+      <workItem from="1617514548125" duration="702000" />
+      <workItem from="1617761079138" duration="9998000" />
     </task>
     <servers />
   </component>
@@ -111,38 +114,38 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="511" y="256" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1617275175990" />
-    <state width="1590" height="219" key="GridCell.Tab.0.bottom" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.0.bottom" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
-    <state width="1590" height="219" key="GridCell.Tab.0.center" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.0.center" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
-    <state width="1590" height="219" key="GridCell.Tab.0.left" timestamp="1617448069880">
+    <state width="1590" height="221" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.0.left" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069880" />
-    <state width="1590" height="219" key="GridCell.Tab.0.right" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.0.right" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
-    <state width="1590" height="219" key="GridCell.Tab.1.bottom" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.1.bottom" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
-    <state width="1590" height="219" key="GridCell.Tab.1.center" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.1.center" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
-    <state width="1590" height="219" key="GridCell.Tab.1.left" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.1.left" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
-    <state width="1590" height="219" key="GridCell.Tab.1.right" timestamp="1617448069881">
+    <state width="1590" height="221" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
+    <state width="1590" height="221" key="GridCell.Tab.1.right" timestamp="1617515250205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1590" height="219" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1617448069881" />
+    <state width="1590" height="221" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1617515250205" />
     <state x="596" y="93" key="SettingsEditor" timestamp="1617107114684">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

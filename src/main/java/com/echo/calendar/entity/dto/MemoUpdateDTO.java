@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class MemoUpdateDTO {
 
     String mid;
-    String openid;
     String title;
     String text;
     String time;

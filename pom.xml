@@ -126,6 +126,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- 安全验证相关 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <!--        邮件功能        -->
         <dependency>
             <groupId>javax.activation</groupId>

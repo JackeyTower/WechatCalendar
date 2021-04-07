@@ -8,9 +8,13 @@ import com.echo.calendar.entity.pojo.MemoEntity;
 import com.echo.calendar.entity.vo.MemoQueryVO;
 import com.echo.calendar.service.impl.MemoServiceImpl;
 import com.echo.calendar.util.IdWorker;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
+@Slf4j
 @RestController
 @RequestMapping("/memo")
 public class MemoController {
@@ -24,10 +28,14 @@ public class MemoController {
     }
 
     @RequestMapping("/add")
-    public CommonResult<String> addMemo(@RequestBody MemoAddDTO memoAddDTO) {
+    public CommonResult<String> addMemo(@RequestBody MemoAddDTO memoAddDTO, HttpServletRequest request) {
+        String openid = request.getAttribute("openid")+"";
         String mid = idWorker.nextId() + "";
+
         MemoEntity memoEntity = new MemoEntity();
         memoEntity.setMid(mid);
+        memoEntity.setOpenid(openid);
+
         BeanUtils.copyProperties(memoAddDTO, memoEntity);
         memoService.save(memoEntity);
         return new CommonResult<>(200, "OK", "mid");
@@ -40,16 +48,19 @@ public class MemoController {
     }
 
     @PutMapping("/update")
-    public CommonResult<String> UpdateMemo(@RequestBody MemoUpdateDTO memoUpdateDTO) {
-        memoService.updateById(memoUpdateDTO);
+    public CommonResult<String> UpdateMemo(@RequestBody MemoUpdateDTO memoUpdateDTO,HttpServletRequest request) {
+        MemoEntity memoEntity = new MemoEntity();
+        BeanUtils.copyProperties(memoUpdateDTO,memoEntity);
+        String openid = request.getAttribute("openid") + "";
+        memoEntity.setOpenid(openid);
+        memoService.updateById(memoEntity);
         return new CommonResult<>(200, "OK", "更新成功");
     }
 
-    @GetMapping("/{openid}/{cp}/{ps}")
-    public CommonResult<PageResult<MemoQueryVO>> findAllMemo(@PathVariable("openid") String openid,
-                                                             @PathVariable("cp") Integer cp,
-                                                             @PathVariable("ps") Integer ps){
-
+    @GetMapping("/{cp}/{ps}")
+    public CommonResult<PageResult<MemoQueryVO>> findAllMemo(@PathVariable("cp") Integer cp,
+                                                             @PathVariable("ps") Integer ps,HttpServletRequest request){
+        String openid = request.getAttribute("openid") + "";
         PageResult<MemoQueryVO> allMemo = memoService.findAllMemo(openid, cp, ps);
         return new CommonResult<>(200,"OK",allMemo);
     }
