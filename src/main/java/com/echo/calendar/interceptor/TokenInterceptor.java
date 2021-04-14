@@ -1,6 +1,9 @@
 package com.echo.calendar.interceptor;
 
+import com.alibaba.fastjson.JSONObject;
+import com.echo.calendar.entity.dto.OpenIdAndSessionKey;
 import com.echo.calendar.util.JwtUtil;
+import com.echo.calendar.util.RedisUtil;
 import io.jsonwebtoken.Claims;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -20,9 +23,12 @@ import javax.servlet.http.HttpServletResponse;
 public class TokenInterceptor implements HandlerInterceptor {
 
     private final JwtUtil jwtUtil;
+    private final RedisUtil redisUtil;
 
-    public TokenInterceptor(JwtUtil jwtUtil) {
+
+    public TokenInterceptor(JwtUtil jwtUtil, RedisUtil redisUtil) {
         this.jwtUtil = jwtUtil;
+        this.redisUtil = redisUtil;
     }
 
     /**
@@ -44,9 +50,15 @@ public class TokenInterceptor implements HandlerInterceptor {
                 //验证token
                 try {
                     Claims claims = jwtUtil.parseJWT(token);
-                    String session_key = (String) claims.get("session_key");
-                    if (session_key != null) {
-                        request.setAttribute("openid",claims.getId());
+                    //获取skey
+                    String skey = (String) claims.get("skey");
+                    if (skey!= null) {
+                        //根据skey从缓存中获取openid和session_key
+                        JSONObject openidAndSessionkey = (JSONObject) redisUtil.get(skey);
+                        String openid = (String) openidAndSessionkey.get("openid");
+                        String session_key = (String) openidAndSessionkey.get("session_key");
+                        //将openid和session_key存入request域中，方便有需要的接口使用
+                        request.setAttribute("openid",openid);
                         request.setAttribute("session_key",session_key);
                         return true;
                     } else {

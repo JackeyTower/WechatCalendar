@@ -26,6 +26,6 @@ public class MemoServiceImpl extends ServiceImpl<MemoDAO, MemoEntity> {
         Page<Object> page = PageHelper.startPage(cp, ps);
         List<MemoQueryVO> allByOpenid = memoDAO.findAllByOpenid(openid);
 
-        return new PageResult<MemoQueryVO>(page.getPages(),page.getTotal(),allByOpenid);
+        return new PageResult<>(page.getPages(), page.getTotal(), allByOpenid);
     }
 }

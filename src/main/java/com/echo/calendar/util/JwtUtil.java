@@ -25,6 +25,11 @@ import java.util.Date;
 public class JwtUtil {
     private String key;
     private long ttl;
+    private RedisUtil redisUtil;
+
+    public JwtUtil(RedisUtil redisUtil) {
+        this.redisUtil = redisUtil;
+    }
 
     public String getKey() {
         return key;
@@ -43,12 +48,12 @@ public class JwtUtil {
     }
 
     /**
-     * 生成JWT
+     * 使用openid和session_key生成JWT
      *
      * @param openid session_key
      * @return
      */
-    public String createJWT(String openid, String session_key) {
+    public String createJWTByOpenidAndSessionkey(String openid, String session_key) {
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
         //在这里我们将用户的id存入Jwt中，方便后续使用
@@ -59,8 +64,30 @@ public class JwtUtil {
         if (ttl > 0) {
             builder.setExpiration(new Date(nowMillis + ttl));
         }
-        return builder.compact();
+        String token=builder.compact();
+        return token;
     }
+
+    /**
+     * 生成JWT
+     *
+     * @param skey
+     * @return
+     */
+    public String createJWTbySkey(String skey) {
+        long nowMillis = System.currentTimeMillis();
+        Date now = new Date(nowMillis);
+        //在这里我们将用户的id存入Jwt中，方便后续使用
+        JwtBuilder builder = Jwts.builder()
+                //在这里我们将用户的skey存入Jwt中，方便后续鉴权，获取所需数据：openid,session_key。
+                .signWith(SignatureAlgorithm.HS256, key).claim("skey", skey);
+        if (ttl > 0) {
+            builder.setExpiration(new Date(nowMillis + ttl));
+        }
+        String token=builder.compact();
+        return token;
+    }
+
 
     /**
      * 解析JWT
