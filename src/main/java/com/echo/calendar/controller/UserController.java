@@ -64,7 +64,7 @@ public class UserController {
         //更新用户信息
         userService.saveOrUpdate(userEntity);
 
-        return new CommonResult<>(200,"OK",userEntity.getUsername());
+        return new CommonResult<>(200,"OK",userEntity.getNickname());
     }
 
     @ApiOperation(value = "删除用户")

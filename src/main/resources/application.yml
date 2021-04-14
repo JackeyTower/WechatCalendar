@@ -4,6 +4,14 @@ spring:
     password: 57842968
     url: jdbc:mysql://115.159.149.240:3306/calendar?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 115.159.149.240
+    port: 6379
+  security:
+    user:
+      name: 1
+      password: 1
+
 
 mybatis:
   configuration:

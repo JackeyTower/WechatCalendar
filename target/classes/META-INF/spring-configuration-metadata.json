@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "jwt.config",
+      "type": "com.echo.calendar.util.JwtUtil",
+      "sourceType": "com.echo.calendar.util.JwtUtil"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jwt.config.key",
+      "type": "java.lang.String",
+      "sourceType": "com.echo.calendar.util.JwtUtil"
+    },
+    {
+      "name": "jwt.config.ttl",
+      "type": "java.lang.Long",
+      "sourceType": "com.echo.calendar.util.JwtUtil",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}
