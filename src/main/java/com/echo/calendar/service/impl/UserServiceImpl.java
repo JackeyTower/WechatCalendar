@@ -11,7 +11,7 @@ import com.echo.calendar.util.*;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
+
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserDAO, UserEntity> {
