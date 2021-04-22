@@ -55,8 +55,8 @@ public class UserController {
     @ApiImplicitParam(name = "userAddDTO",value = "添加用户所需信息",dataType = "UserAddDTO")
     @RequestMapping("/addUser")
     public CommonResult<String> addUser(@RequestBody UserAddDTO userAddDTO, HttpServletRequest request){
-//        String openid = request.getAttribute("openid") + "";
-        String openid="1";
+        String openid = request.getAttribute("openid") + "";
+//        String openid="1";
 
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(userAddDTO,userEntity);
@@ -70,8 +70,8 @@ public class UserController {
     @ApiOperation(value = "删除用户")
     @RequestMapping("/delete")
     public CommonResult<String> deleteUser(HttpServletRequest request) {
-//        String openid = request.getAttribute("openid") + "";
-        String openid="1";
+        String openid = request.getAttribute("openid") + "";
+//        String openid="1";
 
         userService.removeById(openid);
         return new CommonResult<>(200,"OK","删除成功");

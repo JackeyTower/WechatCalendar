@@ -29,8 +29,8 @@ public class MemoController {
 
     @RequestMapping("/add")
     public CommonResult<String> addMemo(@RequestBody MemoAddDTO memoAddDTO, HttpServletRequest request) {
-//        String openid = request.getAttribute("openid")+"";
-        String openid="1";
+        String openid = request.getAttribute("openid")+"";
+//        String openid="1";
 
         String mid = idWorker.nextId() + "";
 
@@ -63,8 +63,8 @@ public class MemoController {
     @GetMapping("/{cp}/{ps}")
     public CommonResult<PageResult<MemoQueryVO>> findAllMemo(@PathVariable("cp") Integer cp,
                                                              @PathVariable("ps") Integer ps,HttpServletRequest request){
-//        String openid = request.getAttribute("openid") + "";
-        String openid="1";
+        String openid = request.getAttribute("openid") + "";
+//        String openid="1";
         PageResult<MemoQueryVO> allMemo = memoService.findAllMemo(openid, cp, ps);
         return new CommonResult<>(200,"OK",allMemo);
     }
