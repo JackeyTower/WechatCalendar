@@ -77,10 +77,4 @@ public class UserController {
         return new CommonResult<>(200,"OK","删除成功");
     }
 
-    @RequestMapping("/redis")
-    public void redisTest(){
-        redisUtil.set("aa","aaa");
-        String aa = redisUtil.get("aa")+"";
-        System.out.println(aa);
-    }
 }

@@ -22,3 +22,11 @@ mybatis:
 server:
   port: 8082
 
+jwt:
+  config:
+    key: iwqjhda8232bjgh432[cicada-smile] #）
+    ttl: 21600000 #毫秒
+
+wx:
+  appid: wxc63cd1097d2b71c1
+  appsecret: 7005887ea25458867a1cc30b3fd69429
